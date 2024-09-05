@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+* {
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+   
+}
+section{
+    width: 85%;
+    margin: auto;
+    padding: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+hr{
+    border: none;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(255, 255, 255);
+}
+#teste{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#entrar{
+    display: inline;
+    position: relative;
+    bottom: 10px;
+    color: #EDEDED;
+   
+}
+#menu-icon{
+    position: relative;
+    bottom: 10px;
+    color: #ffffff;
+}
+.sociais{
+    display: inline;
+    position: relative;
+    top: 10px;
+    left: 400px;
+}
+#tracoicon{
+    position: relative;
+    bottom: 10px;
+    top: 3px;
+}
+.tracoicon{
+    position: relative;
+    top: 10px;
+}
+#r7icon{
+    width: 40px;
+    margin: 10px ;
+    padding: 20px;
+    position: relative;
+    top: 5px;
+   
+}
+#Menu2{
+    position: relative;
+    top: 15px;
+}
+ 
+.Menu p{
+    display: inline-block;
+    padding: 5px;
+    color: aliceblue;
+}
+#Play{
+    margin: 20px;
+    display: inline-block;
+    justify-content: space-between;    
+}
+.topico-margin{
+    margin: 0px auto 0px auto;
+}
+.anuncio-img{
+    margin: 90px 90px 60px 90px;
+    width: 970px;
+    height: 250px;
+}
+#sec-nsi{
+    margin: auto auto 70px auto;
+    width: 80%;
+    height: auto;
+}
+.Noticia-s-imagem{
+    width: 100%;
+    font-size: 50px;
+    font-weight: 650px;
+    color: #333333;
+}
+a{
+    text-decoration: none;
+    border: none;
+}
+.ao-vivo {
+    display: flex;
+    width: 85%;
+    height: 60px;
+    background-color: #EDEDED;
+    margin: auto auto 30px auto;
+    font-size: larger;
+    font-weight: bolder;
+    align-items: center;
+}
+.ao-vivo p{
+    color: #333333;
+}
+.ao-vivo-aside{
+    background-color: #EDEDED;
+}
+ 
+ 
+.ao-vivo-icon {
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 10px;
+}
+ 
+header{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background-color:  #218ee1;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 1000;
+ 
+}
+ 
+header p{
+    font-size: 13px;
+}
+#nt2{
+    position: relative;
+    top: 25px;
+}
+.noticias-pequenas{
+    display: flex;
+    margin: 0px auto 0px auto;
+    width: 1146px;
+    height: 280px;
+}
+.noticias-pequenas div{
+    width: 350px;
+    height: 123px;
+    margin: 20px;
+    vertical-align: baseline;
+ 
+}
+.noticias-pequenas article div img{
+    width: 40%;
+    height: 100%;
+}
+.noticias-pequenas article div a p{
+    width: 210px;
+    position: relative;
+    bottom: 125px;
+    left: 145px;
+}
+ 
+.topico{
+    display: flex;
+    width: 87%;
+    height: 30px;
+    margin: 0px auto 20px auto;
+    padding: auto;
+    align-items: end;
+    justify-content: flex-start;
+}
+.topico a{
+    padding: 35px;
+    font-size: larger;
+    display: inline;
+    margin: 0px 60px 0px;
+    text-decoration: none;
+    font-weight: normal;
+    color: #333333;
+}
+#topico-imagem{
+    padding: 1px;
+    position: relative;
+    left: 18px;
+}
+ 
+#tempo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #1172BA;
+    position: relative;
+    right: 80px;
+ 
+}
+.noticias-m{
+    width: 1146px;
+    height: auto;
+}
+.noticias-m div{
+    width: 282px;
+    height: 193px;
+    position: relative;
+    left: 10px;
+}
+nav{
+    position: relative;
+    bottom: 5px;
+}
+#tempo{
+    margin: 30px auto;
+}
+.barra-icon{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.temas{
+    height: auto;
+    margin: 5px auto;
+    padding: auto;
+    position: relative;
+    bottom: 10px;
+}
+.temas div{
+    height: 277px;
+    width: 350px;
+    margin: 20px 20px 20px 20px;
+}
+.temas div img{
+    width: 100%;
+    height: 197px;
+    border-radius: 3px;
+}
+ 
+.temas div p{
+    font-size: 1em;
+    font-weight: 600;
+}
+.temas div a{
+    text-decoration: none;
+    border: none;
+}
+.traco-tema{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 1116px;
+    height: 104px;
+    margin: 35px auto 0 auto;
+}
+.hr{
+    display: flex;
+    flex-direction: row;
+    background-color: #333333;
+}
+.traco-tema hr {
+    display: flex;
+    flex-direction: row;
+    margin: 0px  0px  0px 10px;
+    background-color: #218ee1;
+    width: 79.19%;
+    height: 1px;
+ 
+}
+.traco-tema P{
+font-size:  3rem;
+color: #218ee1;
+}
+.traco-b{
+    width: auto;
+    height: auto;
+    margin: 0 auto 0 auto;
+    position: relative;
+    right: 70px;
+    padding:auto;
+}
+.traco-b hr{
+    display: flex;
+    position: relative;
+    left: 190px;
+    bottom: 45px;
+    flex-direction: row;
+    margin: 0px px 0px 10px;
+    background-color: #218ee1;
+    width: 82%;
+    height: 1.5px;
+ 
+}
+#brasilia p{
+    color: #333333;
+}
+#brasilia hr{
+    width: 77%;
+    background-color: #333333;
+}
+#brasiliat{
+    background-color: #333333;
+}
+ 
+ 
+.temas-jr{
+    display: flex;
+    align-items: flex-start;
+    height: 280px;
+    margin: 5px auto;
+    padding: auto;
+    position: relative;
+    bottom: 10px;
+}
+.temas-jr div{
+    height: 277px;
+    width: 350px;
+    margin: 20px 20px 20px 20px;
+}
+.temas-jr div img{
+    width: 100%;
+    height: 197px;
+    border-radius: 3px;
+}
+ 
+.temas-jr div p{
+    font-size: 1em;
+    font-weight: 600;
+}
+.temas-jr div a{
+    text-decoration: none;
+    border: none;
+}
+#jr24{
+    background-color:#4766AC;
+    position: relative;
+    top: 1px;
+}
+
+ 
+ 
+.temas-esportes{
+    display: flex;
+    align-items: flex-start;
+    height: 280px;
+    margin: 5px auto;
+    padding: auto;
+    position: relative;
+    bottom: 10px;
+}
+.temas-esportes div{
+    height: 277px;
+    width: 350px;
+    margin: 20px 20px 20px 20px;
+}
+.temas-esportes div img{
+    width: 100%;
+    height: 197px;
+    border-radius: 3px;
+}
+ 
+.temas-esportes div p{
+    font-size: 1em;
+    font-weight: 600;
+}
+.temas-esportes div a{
+    text-decoration: none;
+    border: none;
+}
+.temas p{
+    text-decoration: none;
+}
+#esportes{
+    color: #599973;
+}
+#esportesp{
+    color:#599973 ;
+}
+#hresp{
+    background-color: #599973;
+}
+#espor{
+    background-color: #599973;
+    position: relative;
+    top: 1px;
+}
