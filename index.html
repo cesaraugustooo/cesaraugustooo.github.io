@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Cesar Ferreira - Backend Dev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- Variáveis (Estilo Dark Modern) --- */
+        :root {
+            --bg-color: #0f172a;       /* Azul Profundo */
+            --bg-secondary: #1e293b;   /* Azul Petróleo */
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-cyan: #38bdf8;    /* Azul Neon */
+            --accent-laravel: #ff2d20; /* Vermelho Laravel */
+            --accent-python: #ffcf33;  /* Amarelo Python */
+            --success: #10b981;        /* Verde Sucesso */
+            --gold: #fbbf24;           /* Dourado para Prêmios */
+            --glow: 0 0 20px rgba(56, 189, 248, 0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        .code-font { font-family: 'Fira Code', monospace; }
+
+        /* --- Container Geral --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(15, 23, 42, 0.8);
+            border-bottom: 1px solid #334155;
+        }
+
+        .logo { font-size: 1.2rem; font-weight: 700; color: var(--accent-cyan); }
+        .social-top a { margin-left: 15px; font-size: 1.2rem; color: var(--text-secondary); }
+        .social-top a:hover { color: var(--text-primary); }
+
+        /* --- Hero Compacto --- */
+        .hero {
+            padding: 60px 0 40px 0; /* Menor padding para subir o conteúdo */
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 20px auto;
+        }
+
+        .hero .badge {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-cyan);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* --- SECTION: STACK (DESTAQUE MÁXIMO) --- */
+        .stack-section {
+            padding: 40px 0 80px 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--accent-cyan);
+            padding-left: 15px;
+            display: inline-block;
+        }
+
+        /* Grid Principal para Laravel e FastAPI */
+        .main-tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .tech-card-large {
+            background: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .tech-card-large:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glow);
+        }
+
+        /* Cores específicas para as bordas */
+        .laravel-highlight { border-top: 4px solid var(--accent-laravel); }
+        .python-highlight { border-top: 4px solid var(--accent-python); }
+
+        .tech-card-large i { font-size: 3rem; margin-bottom: 15px; }
+        .tech-card-large h3 { font-size: 1.5rem; margin-bottom: 5px; }
+        .tech-card-large p { color: var(--text-secondary); font-size: 0.95rem; }
+
+        /* Grid Secundário (Outras Skills) */
+        .secondary-tech-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .tech-pill {
+            background: #1e293b;
+            border: 1px solid #334155;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: 0.2s;
+        }
+
+        .tech-pill:hover {
+            border-color: var(--accent-cyan);
+            color: var(--text-primary);
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        /* --- SECTION: CASE DE SUCESSO (FIESP) --- */
+        .featured-wrapper {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(15, 23, 42, 1) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.3); /* Borda verde suave */
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 80px;
+            position: relative;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Faixa de "Premiado" */
+        .award-banner {
+            position: absolute;
+            top: -15px;
+            left: 30px;
+            background: var(--gold);
+            color: #0f172a;
+            padding: 8px 20px;
+            font-weight: 700;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(251, 191, 36, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .case-split {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr; /* Conteúdo maior que a imagem */
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .case-info h3 { font-size: 2rem; margin-bottom: 10px; color: var(--text-primary); }
+        .case-info .subtitle { color: var(--success); font-weight: 600; margin-bottom: 20px; display: block; }
+        
+        .impact-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--text-secondary);
+        }
+        .impact-list li i { color: var(--success); margin-top: 5px; }
+
+        .cert-container {
+            width: 100%;
+            height: 300px;
+            background: #000;
+            border-radius: 10px;
+            border: 2px dashed #475569;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+            color: #475569;
+        }
+
+        .cert-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0; left: 0;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+        .cert-container:hover img { opacity: 1; }
+
+        /* --- Projetos Grid --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding-bottom: 80px;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+            transition: 0.3s;
+        }
+        .project-card:hover { border-color: var(--accent-cyan); transform: translateY(-5px); }
+
+        .project-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .project-card h4 { font-size: 1.3rem; margin-bottom: 10px; }
+        .project-card p { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px; }
+        
+        .tech-tags {
+            font-size: 0.8rem;
+            color: var(--accent-cyan);
+            font-family: 'Fira Code', monospace;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid #334155;
+            color: var(--text-secondary);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .main-tech-grid { grid-template-columns: 1fr; }
+            .case-split { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="logo code-font">&lt;Cesar.Dev /&gt;</div>
+            <div class="social-top">
+                <a href="https://github.com/cesaraugustooo" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/cesar-esquiçacto-559064314" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:cesaraugusto23121989@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <span class="badge code-font">Backend Developer • API Specialist</span>
+            <h1>Cesar Augusto Esquiçacto Ferreira</h1>
+            <p>
+                Transformo regras de negócio complexas em arquiteturas de software eficientes.
+                Especialista em ecossistemas PHP e Python.
+            </p>
+        </section>
+
+        <section class="stack-section">
+            <h2 class="section-title">Minha Stack Principal</h2>
+            
+            <div class="main-tech-grid">
+                
+                <div class="tech-card-large laravel-highlight">
+                    <i class="fab fa-laravel" style="color: var(--accent-laravel);"></i>
+                    <h3>Laravel Framework</h3>
+                    <p>Experiência profunda na construção de sistemas corporativos robustos, gestão de filas, Eloquent ORM e arquitetura MVC escalável.</p>
+                </div>
+
+                <div class="tech-card-large python-highlight">
+                    <i class="fab fa-python" style="color: var(--accent-python);"></i>
+                    <h3>Python & FastAPI</h3>
+                    <p>Desenvolvimento de microsserviços de alta performance, processamento de dados assíncrono e criação de REST APIs modernas.</p>
+                </div>
+            </div>
+
+            <div class="secondary-tech-grid">
+                <div class="tech-pill"><i class="fab fa-docker"></i> Docker</div>
+                <div class="tech-pill"><i class="fas fa-database"></i> MySQL</div>
+                <div class="tech-pill"><i class="fas fa-database"></i> PostgreSQL</div>
+                <div class="tech-pill"><i class="fas fa-server"></i> Redis</div>
+                <div class="tech-pill"><i class="fab fa-node-js"></i> Node.js</div>
+                <div class="tech-pill"><i class="fab fa-react"></i> React.js</div>
+                <div class="tech-pill"><i class="fas fa-cloud"></i> REST APIs</div>
+            </div>
+        </section>
+
+        <section class="featured-wrapper">
+            <div class="award-banner">
+                <i class="fas fa-trophy"></i> DESTAQUE FIESP
+            </div>
+
+            <div class="case-split">
+                <div class="case-info">
+                    <h3>Gestão de Cozinha & Contador de Alunos</h3>
+                    <span class="subtitle">IMPLANTADO NA REDE SESI</span>
+                    <p style="margin-bottom: 20px; color: #cbd5e1;">
+                        Sistema desenvolvido para combater o desperdício de alimentos em escala escolar. O diferencial é o módulo de contagem em tempo real que ajusta a produção da cozinha baseada na presença confirmada dos alunos.
+                    </p>
+                    <ul class="impact-list">
+                        <li><i class="fas fa-check-circle"></i> Gestão completa de estoque e restrições alimentares.</li>
+                        <li><i class="fas fa-check-circle"></i> Redução drástica de desperdício de merenda.</li>
+                        <li><i class="fas fa-check-circle"></i> Apresentado e premiado na Feira de Ciências da FIESP.</li>
+                    </ul>
+                    <div style="margin-top: 30px;">
+                        <a href="LINK_DO_GITHUB_AQUI" target="_blank" style="text-decoration: underline; color: var(--accent-cyan); font-weight: 600;">
+                            Ver Projeto no GitHub <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-container">
+                    <i class="fas fa-certificate" style="font-size: 3rem; margin-bottom: 15px; color: #64748b;"></i>
+                    <p class="code-font" style="font-size: 0.9rem;">
+                       <img src="assets/image.png" alt="Certificado FIESP">
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Outros Projetos Técnicos</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="far fa-folder-open" style="font-size: 1.5rem; color: var(--accent-cyan);"></i>
+                        <a href="LINK_GITHUB" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+                    </div>
+                    <h4>Gestão de Contratações & RH</h4>
+                    <p>
+                        Plataforma para gerenciamento de candidaturas. O sistema lida com alto volume de dados utilizando <strong>Redis</strong> para cache e filas, garantindo fluidez no processo seletivo.
+                    </p>
+                    <div class="tech-tags">
+                        PHP (Laravel) • Redis • MySQL • React
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-stopwatch" style="font-size: 1.5rem; color: var(--accent-laravel);"></i>
+                        <a href="LINK_GITHUB" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+                    </div>
+                    <h4>Módulo: Contador Real-Time</h4>
+                    <p>
+                        A lógica backend isolada responsável por computar a entrada de alunos. O frontend em React consome a API REST para atualizar os painéis da cozinha com os dados processados.
+                    </p>
+                    <div class="tech-tags">
+                        PHP (Laravel) • MySQL • React
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>Desenvolvido por Cesar Augusto Esquiçacto Ferreira &copy; 2024</p>
+        </footer>
+
+    </div>
+</body>
+</html>
